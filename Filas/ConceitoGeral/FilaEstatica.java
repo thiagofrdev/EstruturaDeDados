@@ -30,6 +30,7 @@ public class FilaEstatica implements Enfileiravel{
         Object dado = null;
         if (!estaVazia()){
             dado = dados[ponteiroInicio];
+            dados[ponteiroInicio] = null;
             ponteiroInicio++;
         } else 
             System.out.println("A fila está vazia!");
@@ -42,6 +43,35 @@ public class FilaEstatica implements Enfileiravel{
         if (!estaVazia())
             dado = dados[ponteiroInicio];
         else {
+            System.out.println("A fila está vazia!");
+            dado = "[ ]";
+        }
+        return dado;
+    }
+
+    @Override
+    public Object verificarFim(){
+        Object dado;
+        if (!estaVazia())
+            dado = dados[ponteiroFim];
+        else {
+            System.out.println("A fila está vazia!");
+            dado = "[ ]";
+        }
+        return dado;
+    }
+
+    @Override
+    public Object verificarElemento(int indice){
+        Object dado;
+        if (!estaVazia()){
+            if (dados[indice] != null)
+                dado = dados[indice];
+            else {
+                System.out.printf("A posição [%d] está vazia!\n", indice);
+                dado = "[ ]";
+            }
+        } else {
             System.out.println("A fila está vazia!");
             dado = "[ ]";
         }

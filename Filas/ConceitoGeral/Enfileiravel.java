@@ -6,6 +6,8 @@ public interface Enfileiravel {
     void enfileirar(Object dado);   //Método que acrescenta um elemento ao final da Fila
     Object desenfileirar();         //Método que remove o primeiro elemento da Fila
     Object verificar();             //Método que retorna o prmeiro elemento da Fila
+    Object verificarFim();          //Método que retorna o ultimo elemento da Fila
+    Object verificarElemento(int indice);     //Método que retorna um elemento específico
     
     //Métoros Auxiliares
     boolean estaCheia();    //Método para verificar de a Fila está cheia

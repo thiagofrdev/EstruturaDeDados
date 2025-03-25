@@ -19,5 +19,8 @@ public class TestesFilas {
         f1.desenfileirar();
         System.out.println(f1.imprimir());
         System.out.println(f1.verificar());
+
+        System.out.println(f1.verificarFim());
+        System.out.println(f1.verificarElemento(3));
     }
 }
