@@ -38,11 +38,13 @@ public class FilaEstatica implements Enfileiravel{
 
     @Override
     public Object verificar(){
-        Object dado = null;
-        if (!estaVazia()){
+        Object dado;
+        if (!estaVazia())
             dado = dados[ponteiroInicio];
-        } else 
+        else {
             System.out.println("A fila está vazia!");
+            dado = "[ ]";
+        }
         return dado;
     }
 
