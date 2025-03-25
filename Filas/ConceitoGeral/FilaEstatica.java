@@ -70,7 +70,7 @@ public class FilaEstatica implements Enfileiravel{
     @Override
     public String imprimir(){
         String resultado = "[";
-        for (int i = ponteiroInicio; i < ponteiroFim; i++) {
+        for (int i = ponteiroInicio; i <= ponteiroFim; i++) {
             if (i != ponteiroFim)
                 resultado += dados[i] + ", ";
             else
