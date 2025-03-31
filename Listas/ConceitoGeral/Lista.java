@@ -1,6 +1,6 @@
 package Listas.ConceitoGeral;
 
-public interface FilaEstatica {
+public interface Lista {
     //Métodos Principais
     void adicionar(Object elemento);                        //Adiciona um elemento no final da Lista
     void adicionarPosicao(int idice, Object elemento);      //Adiciona um elemento num indice específico
