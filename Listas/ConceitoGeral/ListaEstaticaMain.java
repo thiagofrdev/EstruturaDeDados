@@ -12,5 +12,9 @@ public class ListaEstaticaMain {
         lista.adicionar("grbfbf");
 
         System.out.println(lista.imprimir());
+
+        System.out.println(lista.remover(2));
+
+        System.out.println(lista.imprimir());
     }
 }

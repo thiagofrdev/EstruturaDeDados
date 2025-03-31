@@ -40,7 +40,7 @@ public class ListaEstatica implements Lista{
             if(lista[indice] != null){
                 retorno = lista[indice];
                 while (indice < lista.length-1) {
-                    lista[indice] = lista[indice++];
+                    lista[indice] = lista[indice+1];
                     indice++;
                 }
                 qtdElementos--;
