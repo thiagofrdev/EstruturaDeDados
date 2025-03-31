@@ -8,6 +8,8 @@ public class ListaEstaticaMain {
         lista.adicionar("Casa");
         lista.adicionar(9.37);
         lista.adicionar('A');
+        lista.adicionar(true);
+        lista.adicionar("grbfbf");
 
         System.out.println(lista.imprimir());
     }

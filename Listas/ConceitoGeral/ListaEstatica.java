@@ -71,7 +71,7 @@ public class ListaEstatica implements Lista{
 
     @Override
     public boolean estaCheia(){
-        return qtdElementos == lista.length-1;
+        return qtdElementos == lista.length;
     }
 
     @Override
