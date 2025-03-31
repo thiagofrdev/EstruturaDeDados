@@ -76,13 +76,13 @@ public class ListaEstatica implements Lista{
 
     @Override
     public String imprimir(){
-        String retorno = "[ ";
-        for(int i = 0; i < lista.length; i++){
-            if(lista[i+1] != null) 
-                System.out.print(lista[i] + ", ");
+        String retorno = "[";
+        for(int i = 0; i < qtdElementos; i++){
+            if(i != qtdElementos-1) 
+                retorno += lista[i] + ", ";
             else
-                System.out.print(lista[i]);
+                retorno += lista[i];
         }
-        return retorno + " ]";
+        return retorno + "]";
     }
 }

@@ -7,8 +7,8 @@ public class ListaEstaticaMain {
         lista.adicionar(1);
         lista.adicionar("Casa");
         lista.adicionar(9.37);
+        lista.adicionar('A');
 
-        lista.imprimir();
+        System.out.println(lista.imprimir());
     }
-    
 }
