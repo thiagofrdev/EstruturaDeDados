@@ -58,14 +58,13 @@ public class PilhaEstatica implements Empilhavel {
 
     @Override
     public String imprimir(){
+        String retorno = "[";
         if (!estaVazia()) {
-            System.out.print("[");
             for (int i = 0; topo >= i; i++){
-                System.out.print(pilha[i] + " ");
+                retorno += pilha[i] + ", ";
             }
-            System.out.println("]");
-            return "";
         } else
-            return "Pilha vazia!";
+            System.err.println("Pilha vazia!");
+        return retorno.substring(0, retorno.length() - 2) + "]";
     }
 }
