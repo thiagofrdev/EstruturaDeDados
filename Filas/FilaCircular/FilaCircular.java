@@ -2,7 +2,7 @@ package Filas.FilaCircular;
 
 public class FilaCircular implements Enfileiravel {
     //Variáveis de instância
-    Enfileiravel[] filaCircular;
+    Object[] filaCircular;
     int ponteiroInicio;
     int ponteiroFim;
     int quantidade; //Necessário para distinguir entre cheia e vazia
@@ -17,7 +17,38 @@ public class FilaCircular implements Enfileiravel {
         quantidade = 0;
     }
 
-    
+    //Métodos principais
+    @Override
+    public void enfileirar(Object dado){
+        if(!estaCheia()){
+            avancar(ponteiroFim);
+            filaCircular[ponteiroFim] = dado;
+            quantidade++;
+        } else 
+            System.err.println("Fila Cheia!");
+    }
+
+    @Override
+    public Object desenfileirar(){
+        Object retorno = null;
+        if(!estaVazia()){
+            retorno = filaCircular[ponteiroInicio];
+            avancar(ponteiroInicio);
+            quantidade--;
+        } else
+            System.err.println("Fila vazia!");
+        return retorno;
+    }
+
+    @Override
+    public Object verificar(){
+        Object retorno = null;
+        if(!estaVazia())
+            retorno = filaCircular[ponteiroInicio];
+        else
+            System.err.println("Fila vazia!");
+        return retorno;
+    }
 
     //Métodos secundários
     @Override
