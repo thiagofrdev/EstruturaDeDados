@@ -17,7 +17,14 @@ public class FilaCircular implements Enfileiravel {
         quantidade = 0;
     }
 
+    
+
     //Métodos secundários
+    @Override
+    public int avancar(int ponteiro){
+        return (ponteiro+1)%filaCircular.length;
+    }
+
     @Override
     public boolean estaCheia(){
         // return (ponteiroInicio + filaCircular.length-1) % filaCircular.length == ponteiroFim;
@@ -32,7 +39,7 @@ public class FilaCircular implements Enfileiravel {
     @Override
     public String imprimir(){
         String retorno = "[";
-        for (int i = ponteiroInicio; i != ponteiroFim; i = (i+1)%filaCircular.length){
+        for (int i = ponteiroInicio; i != ponteiroFim; i = avancar(i)){
             retorno += filaCircular[i] + ", ";
         }
         return retorno;
