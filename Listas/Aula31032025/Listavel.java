@@ -20,5 +20,5 @@ public interface Listavel {
 
     boolean estaCheia();
     boolean estaVazia();
-    boolean imprimir();
+    String imprimir();
 }

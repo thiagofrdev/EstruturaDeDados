@@ -11,7 +11,7 @@ public class FilaCircular implements Enfileiravel {
     public FilaCircular(){this(10);}
 
     public FilaCircular(int tamanho){
-        filaCircular = new Enfileiravel[tamanho];
+        filaCircular = new Object[tamanho];
         ponteiroInicio = 0;
         ponteiroFim = -1;
         quantidade = 0;
@@ -21,7 +21,7 @@ public class FilaCircular implements Enfileiravel {
     @Override
     public void enfileirar(Object dado){
         if(!estaCheia()){
-            avancar(ponteiroFim);
+            ponteiroFim = avancar(ponteiroFim);
             filaCircular[ponteiroFim] = dado;
             quantidade++;
         } else 
@@ -33,7 +33,7 @@ public class FilaCircular implements Enfileiravel {
         Object retorno = null;
         if(!estaVazia()){
             retorno = filaCircular[ponteiroInicio];
-            avancar(ponteiroInicio);
+            ponteiroInicio = avancar(ponteiroInicio);
             quantidade--;
         } else
             System.err.println("Fila vazia!");
@@ -70,9 +70,11 @@ public class FilaCircular implements Enfileiravel {
     @Override
     public String imprimir(){
         String retorno = "[";
-        for (int i = ponteiroInicio; i != ponteiroFim; i = avancar(i)){
+        int cont = 0;
+        for(int i = ponteiroInicio; cont < quantidade; i = avancar(i)){
             retorno += filaCircular[i] + ", ";
+            cont++;
         }
-        return retorno;
+        return retorno.substring(0, retorno.length() - 2) + "]";
     }
 }
