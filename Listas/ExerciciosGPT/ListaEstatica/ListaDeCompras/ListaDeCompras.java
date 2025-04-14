@@ -32,11 +32,11 @@ public class ListaDeCompras implements Listavel{
 
     //Métodos Secundários
     public boolean estaCheia(){
-        return false;
+        return qtdElementos == lista.length;
     }
 
     public boolean estaVazia(){
-        return false;
+        return qtdElementos == 0;
     }
 
     public String imprimir(){
