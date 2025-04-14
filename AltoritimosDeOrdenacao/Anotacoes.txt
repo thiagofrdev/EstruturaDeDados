@@ -1,0 +1,15 @@
+ALGORITIMOS DE ORDENAÇÃO (POR TROCA)
+LSITAS ORDENADAS
+BUSCA DE DADOS
+
+BOUBBLE SORT
+    - Compara os elementos e troca eles de lugar, conforme a regra de troca
+    - Um boubble sort de um array de inteiros fará multiplas trocas a fim de ordenar todos esses números
+
+public void boubbleSort(){
+
+}
+
+
+SELECTION SORT
+INSERTION SORT
