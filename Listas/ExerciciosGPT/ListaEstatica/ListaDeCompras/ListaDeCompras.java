@@ -40,6 +40,10 @@ public class ListaDeCompras implements Listavel{
     }
 
     public String imprimir(){
-        return "false";
+        String retorno = "[";
+        for(int i = 0; i < qtdElementos; i++)
+            retorno += lista[i] + ", ";
+        retorno.substring(0, retorno.length()-2);
+        return retorno += "]";
     }
 }
