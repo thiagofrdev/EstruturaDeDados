@@ -25,6 +25,28 @@ public class AlgoritimoBubbleSort {
 public class Ordenação{
     int dados[] = new {6,8,3,1,9,0,2,5};
 
+    public voic imprimirTela(){
+        for (int dado: dados)
+            System.out.print(dado + " ");
+
+        System.out.println(""); 
+    }
+
+    public void selectionSort(){
+        for(int j = 0; j < dado.length; j++){
+            int menor = j;
+            for(int i = 1+j; i < dado.length; i++){
+                if (dados[menor] > dados[i])
+                    menor = 1;
+            }
+            troca(j, menor);
+        }
+    }
+
+    public void insertionSort(){
+
+    }
+
     public void bubbleSort(){
         for (int j = 0; j < dados.lenght-1; i++){
             for(int i = 0; i < dados.lenght-1-j; i++){
