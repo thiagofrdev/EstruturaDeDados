@@ -2,8 +2,8 @@ package Listas.ExerciciosGPT.ListaEstatica.ListaDeCompras;
 
 public class ListaDeCompras implements Listavel{
     //Variáveis de Instância
-    Object[] lista;
-    int qtdElementos;
+    private Object[] lista;
+    private int qtdElementos;
 
     //Construtor
     public ListaDeCompras(){this(10);}
@@ -70,8 +70,8 @@ public class ListaDeCompras implements Listavel{
     public String imprimir(){
         String retorno = "[";
         for(int i = 0; i < qtdElementos; i++)
-            retorno += lista[i] + ", ";
-        retorno.substring(0, retorno.length()-2);
+            if(i+1 != qtdElementos) retorno += lista[i] + ", ";
+            else retorno += lista[i];
         return retorno += "]";
     }
 }

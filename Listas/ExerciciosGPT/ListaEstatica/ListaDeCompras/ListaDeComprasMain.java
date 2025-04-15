@@ -12,5 +12,9 @@ Requisitos adicionais:
 package Listas.ExerciciosGPT.ListaEstatica.ListaDeCompras;
 
 public class ListaDeComprasMain {
-    
+    public static void main(String[] args) {
+        ListaDeCompras lista = new ListaDeCompras();
+
+        System.out.println(lista.imprimir());
+    }
 }
