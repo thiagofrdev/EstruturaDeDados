@@ -4,7 +4,7 @@ public interface Listavel {
     //Métodos Principais
     boolean inserir(Object dado);
     Object remover(int posicao);
-    boolean buscar(Object dado);
+    int buscar(String nome);
     boolean atualizar(int posicao, Object dado);
 
     //Métodos Secundários
