@@ -13,9 +13,10 @@ package Listas.ExerciciosGPT.ListaEstatica.ListaDeCompras;
 
 public class ListaDeComprasMain {
     public static void main(String[] args) {
-        ListaDeCompras lista = new ListaDeCompras();
+        ListaDeCompras lista = new ListaDeCompras(8);
 
         System.out.println(lista.imprimir());
+        lista.remover(2);
 
         lista.inserir(1);
         lista.inserir("Casa");
@@ -30,6 +31,15 @@ public class ListaDeComprasMain {
 
         lista.atualizar(1, 1+2);
         lista.atualizar(4, 95/5);
+        System.out.println(lista.imprimir());
+        
+        lista.inserir("fulano@gmail.com");
+        lista.inserir(9.43);
+        lista.inserir('D');
+        lista.inserir(false);
+        lista.inserir(">");
+        lista.inserir("Thiago");
+        lista.inserir("teste1");
         System.out.println(lista.imprimir());
     }
 }

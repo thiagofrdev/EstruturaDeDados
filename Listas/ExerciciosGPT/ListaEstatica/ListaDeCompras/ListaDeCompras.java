@@ -20,7 +20,7 @@ public class ListaDeCompras implements Listavel{
             lista[qtdElementos] = dado;
             retorno = true;
             qtdElementos++;
-        } else retorno = false;
+        } else System.out.println("Lista cheia!");
         return retorno;
     }
 
