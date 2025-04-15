@@ -38,7 +38,15 @@ public class ListaDeCompras implements Listavel{
     }
 
     public boolean atualizar(int posicao, Object dado){
-        return false;
+        boolean retorno = false;
+        if(!estaVazia())
+            if(lista[posicao] != null){
+                lista[posicao] = dado;
+                retorno = true;
+                System.out.printf("Elemento da posicao %d atualizado!\n", posicao);
+            } else System.out.printf("Não existe elemento na posição %d!\n", posicao);
+        else System.out.println("Lista vazia!");
+        return retorno;
     }
 
     //Métodos Secundários
