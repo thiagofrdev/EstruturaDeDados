@@ -38,13 +38,11 @@ public class ControleParticipantes {
     
     //Métodos Secundários
     boolean estaCheia(){
-        boolean retorno = false;
-        return retorno;
+        return qtdElementos == lista.length;
     }
     
     boolean estaVazia(){
-        boolean retorno = false;
-        return retorno;
+        return qtdElementos == 0;
     }
     
     String imprimir(){
