@@ -48,7 +48,7 @@ public class ListaDeCompras implements Listavel{
     public boolean atualizar(int posicao, Object dado){
         boolean retorno = false;
         if(!estaVazia())
-            if(lista[posicao] != null){
+            if(posicao >= 0 && posicao < qtdElementos){
                 lista[posicao] = dado;
                 retorno = true;
                 System.out.printf("Elemento da posicao %d atualizado!\n", posicao);
