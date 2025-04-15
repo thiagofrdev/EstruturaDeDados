@@ -2,22 +2,28 @@ package AltoritimosDeOrdenacao.Aula14042025;
 
 public class AlgoritimoBubbleSort {
     public static void main(String[] args) {
-        int[] arrayBubble = {4,5,2,9,7,3,6,1,8};
+        int[] array = {4,5,2,9,7,3,6,1,8};
         int passagens = 0;
 
-        while(passagens < arrayBubble.length){
-            for(int i = 0; i < arrayBubble.length-1; i++){
-                if(arrayBubble[i] > arrayBubble[i+1]){
-                    int aux = arrayBubble[i+1];
-                    arrayBubble[i+1] = arrayBubble[i];
-                    arrayBubble[i] = aux;
+        //InsertionSort
+        for(int i = 1; i < array.length-1; i++){
+            
+        }
+
+        /*BubbleSort
+        while(passagens < array.length){
+            for(int i = 0; i < array.length-1; i++){
+                if(array[i] > array[i+1]){
+                    int aux = array[i+1];
+                    array[i+1] = array[i];
+                    array[i] = aux;
                 }
             }
             passagens++;
         }
-        for(int i = 0; i < arrayBubble.length; i++){
-            System.out.print(arrayBubble[i]+" ");
-        }
+        for(int i = 0; i < array.length; i++){
+            System.out.print(array[i]+" ");
+        }*/
     }
 }
 
@@ -44,7 +50,15 @@ public class Ordenação{
     }
 
     public void insertionSort(){
-
+        for(int j = 1; i < dados.length; j++){
+            int pivo = j;
+            for(int i = pivo-1; i > 0; i--){
+                if(dados[pivo] < dados[i])
+                    troca(pivo, i);
+                else
+                    break;
+            }
+        }
     }
 
     public void bubbleSort(){
