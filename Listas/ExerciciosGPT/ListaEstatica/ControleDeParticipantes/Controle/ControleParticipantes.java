@@ -16,8 +16,13 @@ public class ControleParticipantes {
     }
 
     //Métodos Principais
-    boolean inserir(Object dado){
+    boolean inserir(Participante p){
         boolean retorno = false;
+        if(!estaCheia()){
+            lista[qtdElementos] = p;
+            qtdElementos++;
+            retorno = true;
+        } else System.out.println("Lista cheia!");
         return retorno;
     }
 
@@ -47,6 +52,16 @@ public class ControleParticipantes {
     
     String imprimir(){
         String retorno = "";
+        if(!estaVazia())
+            for(int i = 0; i < qtdElementos; i++){
+                System.out.printf(
+                    "Participante %d"+
+                    "\nNome Completo: " + lista[i].getNome() + " " + lista[i].getSobrenome() +
+                    "\nIdade: " + lista[i].getIdade() +
+                    "\nVIP: " + lista[i].isVip() +
+                    "\n"
+                );
+            } else retorno = "Lista vazia!";
         return retorno;
     }
 }
