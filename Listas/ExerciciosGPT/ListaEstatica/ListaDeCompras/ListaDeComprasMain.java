@@ -16,5 +16,14 @@ public class ListaDeComprasMain {
         ListaDeCompras lista = new ListaDeCompras();
 
         System.out.println(lista.imprimir());
+
+        lista.inserir(1);
+        lista.inserir("Casa");
+        lista.inserir(true);
+        System.out.println(lista.imprimir());
+
+        lista.remover(1);
+        lista.atualizar(0, 'T');
+        System.out.println(lista.imprimir());
     }
 }

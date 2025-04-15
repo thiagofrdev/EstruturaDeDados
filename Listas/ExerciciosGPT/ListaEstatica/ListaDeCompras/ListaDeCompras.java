@@ -27,11 +27,10 @@ public class ListaDeCompras implements Listavel{
     public Object remover(int posicao){
         Object retorno = null;
         if(!estaVazia())
-            if(lista[posicao] != null){
+            if(posicao >= 0 && posicao < qtdElementos){
                 retorno = lista[posicao];
-                for(int i = posicao; i < qtdElementos; i++)
-                    if(posicao+1 != lista.length) lista[posicao] = lista[posicao+1];
-                    else lista[posicao] = null;
+                for(int i = posicao; i < qtdElementos; i++) lista[i] = lista[i+1];
+                qtdElementos--;
             } else System.out.printf("Não existe elemento na posição %d!\n", posicao);
         else System.out.println("Lista vazia!");
         return retorno;
