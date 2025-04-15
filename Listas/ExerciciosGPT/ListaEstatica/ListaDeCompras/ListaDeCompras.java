@@ -28,8 +28,13 @@ public class ListaDeCompras implements Listavel{
         return false;
     }
 
-    public Object buscar(Object elemeto){
-        return false;
+    public Object buscar(Object dado){
+        Object retorno = null;
+        if(!estaVazia())
+            for(int i = 0; i < qtdElementos; i++)
+                if(lista[i] == dado)
+                    retorno = dado;
+        return retorno;
     }
 
     public boolean atualizar(int posicao, Object dado){
