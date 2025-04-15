@@ -36,12 +36,12 @@ public class ListaDeCompras implements Listavel{
         return retorno;
     }
 
-    public Object buscar(Object dado){
-        Object retorno = null;
+    public boolean buscar(Object dado){
+        boolean retorno = false;
         if(!estaVazia())
             for(int i = 0; i < qtdElementos; i++)
                 if(lista[i] == dado)
-                    retorno = dado;
+                    retorno = true;
         return retorno;
     }
 

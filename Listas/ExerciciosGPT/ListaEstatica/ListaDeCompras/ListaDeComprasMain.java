@@ -25,5 +25,11 @@ public class ListaDeComprasMain {
         lista.remover(1);
         lista.atualizar(0, 'T');
         System.out.println(lista.imprimir());
+
+        System.out.println(lista.buscar('T'));
+
+        lista.atualizar(1, 1+2);
+        lista.atualizar(4, 95/5);
+        System.out.println(lista.imprimir());
     }
 }
