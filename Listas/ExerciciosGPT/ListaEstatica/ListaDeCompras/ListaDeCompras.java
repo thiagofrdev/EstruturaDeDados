@@ -14,8 +14,14 @@ public class ListaDeCompras implements Listavel{
     }
 
     //Métodos Principais
-    public boolean inserir(int posicao, Object dado){
-        return false;
+    public boolean inserir(Object dado){
+        boolean retorno = false;
+        if(!estaCheia()){
+            lista[qtdElementos] = dado;
+            retorno = true;
+            qtdElementos++;
+        } else retorno = false;
+        return retorno;
     }
 
     public Object remover(int posicao){
