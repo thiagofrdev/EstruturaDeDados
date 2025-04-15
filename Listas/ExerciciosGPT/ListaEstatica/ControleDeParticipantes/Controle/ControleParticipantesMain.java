@@ -11,6 +11,37 @@ Requisitos adicionais:
 
 package Listas.ExerciciosGPT.ListaEstatica.ControleDeParticipantes.Controle;
 
+import java.util.Scanner;
+
+import Listas.ExerciciosGPT.ListaEstatica.ControleDeParticipantes.Entidades.Participante;
+import Listas.ExerciciosGPT.ListaEstatica.ControleDeParticipantes.Excecoes.IdadeInvalidaException;
+
 public class ControleParticipantesMain {
-    
+    public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        Participante p = null;
+
+        do {
+            System.out.print("Digite o nome do participante: ");
+            String nome = scan.nextLine();
+
+            System.out.print("Digite o sobrenome do participante: ");
+            String sobrenome = scan.nextLine();
+
+            System.out.print("Digite a idade do participante: ");
+            int idade = scan.nextInt();
+            scan.nextLine();
+
+            System.out.print("O participante é VIP? (true/false) ");
+            boolean vip = scan.nextBoolean();
+            scan.nextLine();
+
+            try {
+                p = new Participante(nome, sobrenome, idade, vip);
+                System.out.println("Participante criado com sucesso: " + p.getNome() + "\n");
+            } catch (IdadeInvalidaException e) {
+                System.err.println("Erro ao criar participante: " + e.getMessage() + "\n");
+            }
+        } while (p != null);
+    }
 }
