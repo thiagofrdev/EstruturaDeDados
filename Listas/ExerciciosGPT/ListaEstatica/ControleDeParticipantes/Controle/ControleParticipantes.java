@@ -1,6 +1,20 @@
 package Listas.ExerciciosGPT.ListaEstatica.ControleDeParticipantes.Controle;
 
+import Listas.ExerciciosGPT.ListaEstatica.ControleDeParticipantes.Entidades.Participante;
+
 public class ControleParticipantes {
+    //Variáveis de Instância
+    private Participante[] lista;
+    private int qtdElementos;
+
+    //Construtor
+    public ControleParticipantes(){this(50);}
+
+    public ControleParticipantes(int tamanho){
+        lista = new Participante[tamanho];
+        qtdElementos = 0;
+    }
+
     //Métodos Principais
     boolean inserir(Object dado){
         boolean retorno = false;
@@ -22,7 +36,6 @@ public class ControleParticipantes {
         return retorno;
     }
     
-
     //Métodos Secundários
     boolean estaCheia(){
         boolean retorno = false;

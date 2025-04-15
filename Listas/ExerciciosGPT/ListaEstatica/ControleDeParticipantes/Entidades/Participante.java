@@ -2,13 +2,13 @@ package Listas.ExerciciosGPT.ListaEstatica.ControleDeParticipantes.Entidades;
 
 import Listas.ExerciciosGPT.ListaEstatica.ControleDeParticipantes.Excecoes.IdadeInvalidaException;
 
-public class Paticipante {
+public class Participante {
     private String nome;
     private String sobrenome;
     private int idade;
     private boolean vip;
 
-    public Paticipante (String nome, String sobrenome, int idade, boolean vip) throws IdadeInvalidaException {
+    public Participante (String nome, String sobrenome, int idade, boolean vip) throws IdadeInvalidaException {
         if(idade<18)
             throw new IdadeInvalidaException("O participante deve ter no mínimo 18 anos!");
         else if(idade>100) 
