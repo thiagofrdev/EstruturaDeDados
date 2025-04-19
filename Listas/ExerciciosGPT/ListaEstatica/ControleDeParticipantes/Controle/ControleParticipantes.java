@@ -55,11 +55,10 @@ public class ControleParticipantes {
         if(!estaVazia())
             for(int i = 0; i < qtdElementos; i++){
                 System.out.printf(
-                    "Participante %d"+
+                    "\nParticipante %d"+
                     "\nNome Completo: " + lista[i].getNome() + " " + lista[i].getSobrenome() +
                     "\nIdade: " + lista[i].getIdade() +
-                    "\nVIP: " + lista[i].isVip() +
-                    "\n"
+                    "\nVIP: " + lista[i].isVip(), i+1
                 );
             } else retorno = "Lista vazia!";
         return retorno;

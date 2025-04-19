@@ -28,6 +28,7 @@ public class ControleParticipantesMain {
 
             switch(escolha){
                 case 1:
+                    scan.nextLine();
                     System.out.print("Digite o nome do participante: ");
                     String nome = scan.nextLine();
 
@@ -49,9 +50,10 @@ public class ControleParticipantesMain {
                     } catch (IdadeInvalidaException e) {
                         System.err.println("Erro ao criar participante: " + e.getMessage() + "\n");
                     }
-                
+                    break;
                 case 2:
                     System.out.println(lista.imprimir());
+                    break;
             }
         } while (p != null);
     }
