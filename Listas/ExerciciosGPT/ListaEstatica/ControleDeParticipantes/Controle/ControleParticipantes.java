@@ -27,7 +27,14 @@ public class ControleParticipantes {
     }
 
     Object remover(int posicao){
-        boolean retorno = false;
+        Object retorno = null;
+        if(!estaVazia()){
+            if(lista[posicao] != null){
+                retorno = lista[posicao];
+                for (int i = posicao; i < qtdElementos; i++)
+                    lista[posicao] = lista[posicao+1];
+            } else System.out.println("Não há nada nessa posição!");
+        } else System.out.println("Lista vazia!");
         return retorno;
     }
     
@@ -58,9 +65,14 @@ public class ControleParticipantes {
                     "\nParticipante %d"+
                     "\nNome Completo: " + lista[i].getNome() + " " + lista[i].getSobrenome() +
                     "\nIdade: " + lista[i].getIdade() +
-                    "\nVIP: " + lista[i].isVip(), i+1
+                    "\nVIP: " + lista[i].isVip() +
+                    "\n", i+1
                 );
             } else retorno = "Lista vazia!";
         return retorno;
+    }
+
+    public int getQtdElementos(){
+        return qtdElementos;
     }
 }

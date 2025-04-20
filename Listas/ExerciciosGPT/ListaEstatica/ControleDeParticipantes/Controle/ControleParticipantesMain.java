@@ -51,7 +51,16 @@ public class ControleParticipantesMain {
                         System.err.println("Erro ao criar participante: " + e.getMessage() + "\n");
                     }
                     break;
+
                 case 2:
+                    System.out.println("Qual pessoa deseja remover?");
+                    if(!lista.estaVazia())
+                        for(int i = 0; i < lista.getQtdElementos(); i++)
+                            System.out.printf("(%d) %f", i+1, lista.);
+                    lista.remover();
+                    break;
+                
+                case 3:
                     System.out.println(lista.imprimir());
                     break;
             }
