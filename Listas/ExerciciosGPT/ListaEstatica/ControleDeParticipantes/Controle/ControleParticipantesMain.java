@@ -56,7 +56,7 @@ public class ControleParticipantesMain {
                     System.out.println("Qual pessoa deseja remover?");
                     if(!lista.estaVazia())
                         for(int i = 0; i < lista.getQtdElementos(); i++)
-                            System.out.printf("(%d) %f", i+1, lista.);
+                            System.out.printf("(%d) %f", i+1, lista.buscarNomePorPosicao(i));
                     lista.remover();
                     break;
                 

@@ -38,8 +38,23 @@ public class ControleParticipantes {
         return retorno;
     }
     
-    int buscar(String nome){
+    int buscarPosicaoPorNome(String nome){
         int retorno = -1;
+        if(!estaVazia())
+            for(int i = 0; i < qtdElementos; i++)
+                if(nome == lista[i].getNome())
+                    retorno = i;
+        else System.out.println("Lista vazia!");
+        return retorno;
+    }
+
+    String buscarNomePorPosicao(int posicao){
+        String retorno = null;
+        if(!estaVazia())
+            for(int i = 0; i < qtdElementos; i++)
+                if(i == posicao)
+                    retorno = lista[i].getNome();
+        else System.out.println("Lista vazia!");
         return retorno;
     }
     
