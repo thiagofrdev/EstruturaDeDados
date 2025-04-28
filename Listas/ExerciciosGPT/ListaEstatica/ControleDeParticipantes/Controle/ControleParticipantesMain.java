@@ -23,7 +23,7 @@ public class ControleParticipantesMain {
         ControleParticipantes lista = new ControleParticipantes();
 
         do {
-            System.out.print("Selecione o que quer fazer:\n(1) Adicionar Participante\n(2) Imprimir Lista\nEscolha: ");
+            System.out.print("Selecione o que quer fazer:\n(1) Adicionar Participante\n(2) Excluir Participante\n(3) Imprimir Lista\nEscolha: ");
             int escolha = scan.nextInt();
 
             switch(escolha){
@@ -53,11 +53,31 @@ public class ControleParticipantesMain {
                     break;
 
                 case 2:
+                    if(!lista.estaVazia()) {
                     System.out.println("Qual pessoa deseja remover?");
-                    if(!lista.estaVazia())
-                        for(int i = 0; i < lista.getQtdElementos(); i++)
-                            System.out.printf("(%d) %f", i+1, lista.buscarNomePorPosicao(i));
-                    lista.remover();
+                        // Exibe índice e nome de cada participante
+                        for (int i = 0; i < lista.getQtdElementos(); i++) {
+                            String nomeLista = lista.buscarNomePorPosicao(i);
+                            if (nomeLista != null) {
+                                System.out.printf("(%d) %s%n", i + 1, nomeLista);
+                            } else {
+                                System.out.printf("(%d) [Erro ao buscar nome]%n", i + 1);
+                            }
+                        }
+
+                        System.out.print("Digite o nome: ");
+                        int posicaoRemover = scan.nextInt();
+                        scan.nextLine();
+
+                        if (posicaoRemover > 0 && posicaoRemover <= lista.getQtdElementos()) {
+                            lista.remover(posicaoRemover - 1); // Removendo pelo índice (ajustado para 0-based)
+                            System.out.println("Participante removido com sucesso!");
+                        } else {
+                            System.out.println("Número inválido! Tente novamente.");
+                        }
+                    } else {
+                        System.out.println("A lista está vazia!");
+                    }
                     break;
                 
                 case 3:
