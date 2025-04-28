@@ -16,7 +16,7 @@ public class ControleListaDeReceita implements Listavel{
     //Métodos Principais
     public boolean inserir(ListaDeReceita receita){
         boolean retorno = false;
-        if(!estaVazia()){
+        if(!estaCheia()){
             ponteiroFim++;
             lista[ponteiroFim] = receita;
             qtdItens++;
@@ -42,7 +42,10 @@ public class ControleListaDeReceita implements Listavel{
         String retorno = "[";
         if(!estaVazia()){
             for(int i = 0; i < qtdItens; i++){
-                retorno += lista[i] + " ";
+                if(i+1 != qtdItens)
+                    retorno += lista[i].getNomeReceita() + ", ";
+                else
+                    retorno += lista[i].getNomeReceita();
             }
         }
         return retorno + "]";
