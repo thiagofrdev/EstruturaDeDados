@@ -1,9 +1,9 @@
-public class ListaDeReceitas {
+public class ListaDeReceita {
     private String ingredientes;
     private String modoDePreparo;
     private String categoria;
     
-    public ListaDeReceitas(String ingredientes, String modoDePreparo, String categoria) {
+    public ListaDeReceita(String ingredientes, String modoDePreparo, String categoria) {
         this.ingredientes = ingredientes;
         this.modoDePreparo = modoDePreparo;
         this.categoria = categoria;
