@@ -10,5 +10,7 @@ public interface Listavel {
     ListaDeReceita remover(int posicao);
     
     //Métodos Secundários
-    
+    boolean estaCheia();
+    boolean estaVazia();
+    String imprimir();
 }
