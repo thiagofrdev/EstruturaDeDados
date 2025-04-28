@@ -20,7 +20,21 @@ public class ControleListaDeReceita implements Listavel{
     public ListaDeReceita remover(int posicao){return null;}
     
     //Métodos Secundários
-    public boolean estaCheia(){return false;}
-    public boolean estaVazia(){return false;}
-    public String imprimir(){return "false";}
+    public boolean estaCheia(){
+        return qtdItens == lista.length;
+    }
+
+    public boolean estaVazia(){
+        return qtdItens == 0;
+    }
+
+    public String imprimir(){
+        String retorno = "[";
+        if(!estaVazia()){
+            for(int i = 0; i < qtdItens; i++){
+                retorno += lista[i] + " ";
+            }
+        }
+        return retorno + "]";
+    }
 }
