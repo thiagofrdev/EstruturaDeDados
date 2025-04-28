@@ -44,7 +44,17 @@ public class ControleListaDeReceita implements Listavel{
         return retorno;
     }
 
-    public ListaDeReceita remover(int posicao){return null;}
+    public ListaDeReceita remover(int posicao){
+        ListaDeReceita retorno = null;
+        if(!estaVazia()){
+            if(posicao >= 0 && posicao < lista.length){
+                retorno = lista[posicao];
+                lista.realocarItens();
+                qtdItens--;
+            } else System.out.println("Posição inválida!");
+        } else System.out.println("Lista Vazia!");
+        return retorno;
+    }
     
     //Métodos Secundários
     public boolean estaCheia(){
