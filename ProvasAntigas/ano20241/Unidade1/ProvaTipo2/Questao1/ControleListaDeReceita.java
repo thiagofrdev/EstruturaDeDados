@@ -51,6 +51,7 @@ public class ControleListaDeReceita implements Listavel{
                 retorno = lista[posicao];
                 realocarItens(posicao);
                 qtdItens--;
+                ponteiroFim--;
             } else System.out.println("Posição inválida!");
         } else System.out.println("Lista Vazia!");
         return retorno;

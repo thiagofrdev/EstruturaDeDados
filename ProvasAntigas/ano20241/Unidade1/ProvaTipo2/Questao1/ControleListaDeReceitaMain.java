@@ -43,5 +43,10 @@ public class ControleListaDeReceitaMain {
         System.out.println(listaDeReceita.imprimir());
         listaDeReceita.remover(1);
         System.out.println(listaDeReceita.imprimir());
+        listaDeReceita.inserir(brigadeiro);
+        listaDeReceita.inserir(boloSimples);
+        System.out.println(listaDeReceita.imprimir());
+        listaDeReceita.remover(3);
+        System.out.println(listaDeReceita.imprimir());
     }
 }
