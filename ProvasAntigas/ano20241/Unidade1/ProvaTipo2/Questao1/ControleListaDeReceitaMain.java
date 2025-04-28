@@ -36,5 +36,8 @@ public class ControleListaDeReceitaMain {
         System.out.println(listaDeReceita.imprimir());
         listaDeReceita.inserir(brigadeiro);
         System.out.println(listaDeReceita.verificar().getNomeReceita());
+        listaDeReceita.atualizar(2, limonada);
+        System.out.println(listaDeReceita.verificar().getNomeReceita());
+        System.out.println(listaDeReceita.imprimir());
     }
 }

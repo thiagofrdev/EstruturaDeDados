@@ -33,7 +33,17 @@ public class ControleListaDeReceita implements Listavel{
         return retorno;
     }
 
-    public boolean atualizar(int posicao, ListaDeReceita receita){return false;}
+    public boolean atualizar(int posicao, ListaDeReceita receita){
+        boolean retorno = false;
+        if(posicao >= 0 && posicao < lista.length){
+            lista[posicao] = receita;
+            if(lista[posicao] == null)
+                qtdItens++;
+            retorno = true;
+        } else System.out.println("Posição inválida!");
+        return retorno;
+    }
+
     public ListaDeReceita remover(int posicao){return null;}
     
     //Métodos Secundários
