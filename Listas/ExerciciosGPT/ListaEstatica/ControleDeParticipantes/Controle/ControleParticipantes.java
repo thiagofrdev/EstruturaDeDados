@@ -16,7 +16,7 @@ public class ControleParticipantes {
     }
 
     //Métodos Principais
-    boolean inserir(Participante p){
+    public boolean inserir(Participante p){
         boolean retorno = false;
         if(!estaCheia()){
             lista[qtdElementos] = p;
@@ -26,19 +26,20 @@ public class ControleParticipantes {
         return retorno;
     }
 
-    Object remover(int posicao){
+    public Object remover(int posicao){
         Object retorno = null;
         if(!estaVazia()){
             if(lista[posicao] != null){
                 retorno = lista[posicao];
                 for (int i = posicao; i < qtdElementos; i++)
                     lista[posicao] = lista[posicao+1];
+                    lista[posicao+1] = null;
             } else System.out.println("Não há nada nessa posição!");
         } else System.out.println("Lista vazia!");
         return retorno;
     }
     
-    int buscarPosicaoPorNome(String nome){
+    public int buscarPosicaoPorNome(String nome){
         int retorno = -1;
         if(!estaVazia())
             for(int i = 0; i < qtdElementos; i++)
@@ -48,31 +49,30 @@ public class ControleParticipantes {
         return retorno;
     }
 
-    String buscarNomePorPosicao(int posicao){
+    public String buscarNomePorPosicao(int posicao){
         String retorno = null;
         if(!estaVazia())
-            for(int i = 0; i < qtdElementos; i++)
-                if(i == posicao)
-                    retorno = lista[i].getNome();
+            if (posicao >= 0 && posicao < qtdElementos)
+                return lista[posicao].getNome();
         else System.out.println("Lista vazia!");
         return retorno;
     }
     
-    boolean atualizar(int posicao, Object dado){
+    public boolean atualizar(int posicao, Object dado){
         boolean retorno = false;
         return retorno;
     }
     
     //Métodos Secundários
-    boolean estaCheia(){
+    public boolean estaCheia(){
         return qtdElementos == lista.length;
     }
     
-    boolean estaVazia(){
+    public boolean estaVazia(){
         return qtdElementos == 0;
     }
     
-    String imprimir(){
+    public String imprimir(){
         String retorno = "";
         if(!estaVazia())
             for(int i = 0; i < qtdElementos; i++){
