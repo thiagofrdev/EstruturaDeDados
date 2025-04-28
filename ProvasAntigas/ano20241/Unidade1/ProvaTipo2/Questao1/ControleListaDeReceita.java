@@ -25,7 +25,14 @@ public class ControleListaDeReceita implements Listavel{
         return retorno;
     }
     
-    public ListaDeReceita verificar(){return null;}
+    public ListaDeReceita verificar(){
+        ListaDeReceita retorno = null;
+        if(!estaVazia()){
+            retorno = lista[ponteiroFim];
+        } else System.out.println("Lista Vazia!");
+        return retorno;
+    }
+
     public boolean atualizar(int posicao, ListaDeReceita receita){return false;}
     public ListaDeReceita remover(int posicao){return null;}
     

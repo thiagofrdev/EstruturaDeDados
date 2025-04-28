@@ -30,8 +30,11 @@ public class ControleListaDeReceitaMain {
 
         ControleListaDeReceita listaDeReceita = new ControleListaDeReceita();
 
+        listaDeReceita.verificar();
         listaDeReceita.inserir(macarraoAlhoOleo);
         listaDeReceita.inserir(boloSimples);
         System.out.println(listaDeReceita.imprimir());
+        listaDeReceita.inserir(brigadeiro);
+        System.out.println(listaDeReceita.verificar().getNomeReceita());
     }
 }
