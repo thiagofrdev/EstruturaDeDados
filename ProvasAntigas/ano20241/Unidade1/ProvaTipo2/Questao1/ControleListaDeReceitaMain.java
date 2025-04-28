@@ -28,7 +28,7 @@ public class ControleListaDeReceitaMain {
                 "salgado"
         );
 
-        ControleListaDeReceita listaDeReceita = new ControleListaDeReceita();
+        ControleListaDeReceita listaDeReceita = new ControleListaDeReceita(4);
 
         listaDeReceita.verificar();
         listaDeReceita.inserir(macarraoAlhoOleo);
@@ -38,6 +38,10 @@ public class ControleListaDeReceitaMain {
         System.out.println(listaDeReceita.verificar().getNomeReceita());
         listaDeReceita.atualizar(2, limonada);
         System.out.println(listaDeReceita.verificar().getNomeReceita());
+        System.out.println(listaDeReceita.imprimir());
+        listaDeReceita.inserir(brigadeiro);
+        System.out.println(listaDeReceita.imprimir());
+        listaDeReceita.remover(1);
         System.out.println(listaDeReceita.imprimir());
     }
 }

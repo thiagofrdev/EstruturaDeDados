@@ -49,7 +49,7 @@ public class ControleListaDeReceita implements Listavel{
         if(!estaVazia()){
             if(posicao >= 0 && posicao < lista.length){
                 retorno = lista[posicao];
-                lista.realocarItens();
+                realocarItens(posicao);
                 qtdItens--;
             } else System.out.println("Posição inválida!");
         } else System.out.println("Lista Vazia!");
@@ -76,5 +76,15 @@ public class ControleListaDeReceita implements Listavel{
             }
         }
         return retorno + "]";
+    }
+
+    //Métodos Auxiliares
+    public void realocarItens(int posicao){
+        for(int i = posicao; i < qtdItens-1; i++){
+            lista[i] = lista[i+1];
+        }
+        if (qtdItens > 0) {
+            lista[qtdItens - 1] = null;
+        }
     }
 }
