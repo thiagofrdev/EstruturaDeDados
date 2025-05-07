@@ -1,4 +1,4 @@
-package Pilhas.PilhaDinamica;
+package Pilhas.PilhaDinamica.Base_PilhaDinamica;
 
 public class Node<T> {
     //Variáveis de Instância
