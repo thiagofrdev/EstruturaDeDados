@@ -122,4 +122,19 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
             return "Algum erro";
         }
     }
+
+    //Métodos Auxiliares
+    private void apagarNoFolha(NoTriplo<T> no){
+        NoTriplo noPai = no.getGenitor(); //Volta para o pai no nó selecionado
+        
+        if (noPai == null) { //Se for a raiz, o genitor vai ser null...
+            raiz = null;    //...então ele só seta a raiz como null
+        } else {
+            if (noPai.getDireita().equals(no)) {
+                noPai.setDireita(null);
+            } else {
+                noPai.setEsquerda(null);
+            }
+        }
+    }
 }
