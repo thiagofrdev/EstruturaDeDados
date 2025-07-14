@@ -6,6 +6,12 @@ public class NoTriplo<T> {
     private NoTriplo<T> esquerda;
     private NoTriplo<T> direita;
     
+    public NoTriplo(){
+        this.dado = null;
+        this.esquerda = null;
+        this.direita = null;
+    }
+
     public NoTriplo(T dado){
         this.dado = dado;
         this.esquerda = null;
