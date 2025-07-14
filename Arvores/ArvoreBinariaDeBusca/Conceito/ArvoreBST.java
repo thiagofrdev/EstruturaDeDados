@@ -56,6 +56,20 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
         return raiz;
     }
 
+    public NoTriplo<T> buscarDado(T valor){
+        NoTriplo<T> noAuxiliar = raiz; //Começa a busca pela raiz da árvore
+
+        while (noAuxiliar != null) { //Enquanto tiver elementos, continuar buscando
+            int comparacao = valor.compareTo(noAuxiliar.getDado()); //Faz a comparacao
+            if (comparacao == 0) {  //Se forem iguais, retorna o nó noAuxiliar
+                return noAuxiliar;
+            } //Se não forem iguais... 
+            noAuxiliar = (comparacao <= 0) ? noAuxiliar.getEsquerda() : noAuxiliar.getDireita(); //...vai descendo na árvore (aqui é o core da árvore BST)
+        }
+
+        return null;
+    }
+
     public String imprimirPreOrdem(){
         if (raiz == null) {
             return "Árvore vazia";

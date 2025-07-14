@@ -7,6 +7,7 @@ public interface Arborizavel<T> {
     void limpar();
 
     NoTriplo<T> getRaiz();
+    NoTriplo<T> buscarDado();
     String imprimirPreOrdem();
     String imprimirEmOrdem();
     String imprimirPosOrdem();
