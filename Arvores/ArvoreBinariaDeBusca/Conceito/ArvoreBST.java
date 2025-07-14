@@ -7,6 +7,7 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
         this.raiz = null;
     }
 
+    @Override
     public void inserir(T valor){
         NoTriplo<T> novoNo = new NoTriplo<>();
         novoNo.setDado(valor);
@@ -38,24 +39,49 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
         }
     }
 
+    @Override
     public T remover(T valor){
-        System.out.println("Método remover");
-        return null;
+        NoTriplo<T> noAuxiliar = buscarDado(valor); //Variável que vai guardar o retorno de "buscarDado()", que vai ser o dado ou null
+
+        if (noAuxiliar == null) { //Se não encontrar, retorna null
+            return null;
+        }
+
+        //Caso encontre e o nó NÃO tenha filhos
+        if (noAuxiliar.getEsquerda() == null && noAuxiliar.getDireita() == null) {
+            apagarNoFolha(noAuxiliar);
+        }
+
+        //Caso encontre e tenha 1 filho
+        if (noAuxiliar.getEsquerda() == null || noAuxiliar.getDireita() == null) {
+            apagarComUmFilho(noAuxiliar);
+        }
+
+        //Caso encontre e tenha 2 filhos
+        else {
+            apagarComDoisFilhos(noAuxiliar);
+        }
+
+        return valor;
     }
 
+    @Override
     public boolean existe(T dado){
         System.out.println("Método existe");
         return false;
     }
 
+    @Override
     public void limpar(){
         System.out.println("Método limpar");
     }
 
+    @Override
     public NoTriplo<T> getRaiz(){
         return raiz;
     }
 
+    @Override
     public NoTriplo<T> buscarDado(T valor){
         NoTriplo<T> noAuxiliar = raiz; //Começa a busca pela raiz da árvore
 
@@ -70,6 +96,7 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
         return null;
     }
 
+    @Override
     public String imprimirPreOrdem(){
         if (raiz == null) {
             return "Árvore vazia";
@@ -78,6 +105,7 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
         }
     }
 
+    @Override
     public String imprimirEmOrdem(){
         if (raiz == null) {
             return "Árvore vazia";
@@ -86,6 +114,7 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
         }
     }
 
+    @Override
     public String imprimirPosOrdem(){
         if (raiz == null) {
             return "Árvore vazia";
