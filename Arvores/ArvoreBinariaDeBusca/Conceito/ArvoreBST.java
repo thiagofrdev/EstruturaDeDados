@@ -137,4 +137,21 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
             }
         }
     }
+
+    private void apagarComUmFilho(NoTriplo<T> no){ //Dica: o nó a ser removido será um nó meio (Esse nó tem um pai e um filho. O filho tem um avô e o avô tem um neto). Aqui vamos pensar na relação a aprtir do filho (por isso o "Avô")
+        NoTriplo<T> avo = no.getGenitor(); //pega o pai no nó que será excluido (Avô do filho do pai)
+        NoTriplo<T> neto = ((no.getEsquerda() != null) ? no.getEsquerda() : no.getDireita()); //Pega o filho do elemento que será excluido (Neto do pai do filho)
+
+        if(avo == null){ //Se o pai do que será excluido for null, então o pai é a raiz
+            raiz = neto; //Apagando a raiz, o seu único filho se torna a nova raiz
+            raiz.setGenitor(null); //Seta o genitor da nova raiz como null
+        } else { //Se o genitor do que será excluido existir...
+            neto.setGenitor(avo); //O avô vira o pai no neto
+            if (no.equals(avo.getEsquerda())) { //Se o nó removido foi o da esquerda... 
+                avo.setEsquerda(neto); //...atribui o nó à esquerda
+            } else { //Se o nó removido foi o da direita...
+                avo.setDireita(neto); //...atribui o nó à direita
+            }
+        }
+    }
 }
