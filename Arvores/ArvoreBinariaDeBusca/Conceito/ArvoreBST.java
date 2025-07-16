@@ -154,4 +154,16 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
             }
         }
     }
+
+    private void apagarComDoisFilhos(NoTriplo<T> no){
+    }
+
+    //Retona o menor valor da subárvore direita do dado que vai ser apagado
+    private NoTriplo<T> enontraMenorDireita(NoTriplo<T> no){
+        NoTriplo<T> atual = no.getDireita(); //Nó da direita do que será apagado
+        while (atual.getEsquerda() != null) { //Desce pela esquerda até achar o último (o menor da direita)
+            atual = atual.getEsquerda();
+        }
+        return atual;
+    }
 }
