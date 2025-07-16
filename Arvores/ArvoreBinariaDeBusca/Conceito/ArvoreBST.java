@@ -156,6 +156,15 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
     }
 
     private void apagarComDoisFilhos(NoTriplo<T> no){
+        NoTriplo<T> menorDireita = enontraMenorDireita(no); //Encontra o nó que será substituido
+
+        no.setDado(menorDireita.getDado()); //Seta o valor do nó encontrado no nó que será apagado (os dois nós ainda existem e agora tem o mesmo dado)
+
+        if (menorDireita.getEsquerda() == null && menorDireita.getDireita() == null) { //Se o nó encontrado não tiver nenhum filho...
+            apagarNoFolha(menorDireita);
+        } else { //Se o nó encontrado tiver um filho...
+            apagarComUmFilho(menorDireita);
+        } //Se o nó encontrado tiver dois filhos, o código terá feito uma outra verificação e cairia em algum dos casos a cima
     }
 
     //Retona o menor valor da subárvore direita do dado que vai ser apagado
