@@ -98,7 +98,7 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
 
     @Override
     public String imprimirPreOrdem(){
-        return imprimirPreOrdemRec(raiz);
+        return imprimir(imprimirPreOrdemRec(raiz));
     }
 
     @Override
@@ -201,5 +201,10 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
         return raizAtual.getDado() + " " +  //
                 imprimirPreOrdemRec(raizAtual.getEsquerda()) +  " " +
                 imprimirPreOrdemRec(raizAtual.getDireita());
+    }
+
+    private String imprimir(String texto){
+        texto = texto.trim().replaceAll("\\s+", ", ");
+        return "[" + texto + "]";
     }
 }
