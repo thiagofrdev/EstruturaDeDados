@@ -68,13 +68,12 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
 
     @Override
     public boolean existe(T dado){
-        System.out.println("Método existe");
-        return false;
+        return (buscarDado(dado) != null);
     }
 
     @Override
     public void limpar(){
-        System.out.println("Método limpar");
+        raiz = null;
     }
 
     @Override
