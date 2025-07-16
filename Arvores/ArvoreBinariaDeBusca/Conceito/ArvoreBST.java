@@ -160,9 +160,18 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
 
     //Retona o menor valor da subárvore direita do dado que vai ser apagado
     private NoTriplo<T> enontraMenorDireita(NoTriplo<T> no){
-        NoTriplo<T> atual = no.getDireita(); //Nó da direita do que será apagado
+        NoTriplo<T> atual = no.getDireita(); //Nó's da direita do nó que será apagado
         while (atual.getEsquerda() != null) { //Desce pela esquerda até achar o último (o menor da direita)
             atual = atual.getEsquerda();
+        }
+        return atual;
+    }
+
+    //Retona o maior valor da subárvore esquerda do dado que vai ser apagado
+    private NoTriplo<T> encontraMaiorEsquerda(NoTriplo<T> no){
+        NoTriplo<T> atual = no.getEsquerda(); //Nó's da esquerda do nó que será apagado
+        while (atual.getDireita() != null) { //Desce pela diretia até achar o ultimo (o maior da esquerda)
+            atual = atual.getDireita();
         }
         return atual;
     }
