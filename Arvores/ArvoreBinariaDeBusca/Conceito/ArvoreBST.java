@@ -59,7 +59,8 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
 
         //Caso encontre e tenha 2 filhos
         else {
-            apagarComDoisFilhos(noAuxiliar);
+            apagarComDoisFilhosDireita(noAuxiliar);
+            //apagarComDoisFilhosEsquerda(noAuxiliar);
         }
 
         return valor;
