@@ -15,6 +15,8 @@ public class ArvoreBSTCLI {
         arvore.inserir(20);
         arvore.inserir(13);
 
-        System.out.println(arvore.imprimirPreOrdem());
+        System.out.println("Pré Ordem: " + arvore.imprimirPreOrdem());
+        System.out.println("Em Ordem: " + arvore.imprimirEmOrdem());
+        System.out.println("Pós Ordem: " + arvore.imprimirPosOrdem());
     }    
 }

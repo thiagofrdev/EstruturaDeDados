@@ -103,20 +103,12 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
 
     @Override
     public String imprimirEmOrdem(){
-        if (raiz == null) {
-            return "Árvore vazia";
-        } else {
-            return "Algum erro";
-        }
+        return imprimir(imprimirEmOrdemRec(raiz));
     }
 
     @Override
     public String imprimirPosOrdem(){
-        if (raiz == null) {
-            return "Árvore vazia";
-        } else {
-            return "Algum erro";
-        }
+        return imprimir(imprimirPosOrdemRec(raiz));
     }
 
     //Métodos Auxiliares
@@ -201,6 +193,20 @@ public class ArvoreBST<T extends Comparable<T>> implements Arborizavel<T> {
         return raizAtual.getDado() + " " +  //
                 imprimirPreOrdemRec(raizAtual.getEsquerda()) +  " " +
                 imprimirPreOrdemRec(raizAtual.getDireita());
+    }
+
+    private String imprimirEmOrdemRec(NoTriplo<T> raizAtual) {
+        if (raizAtual == null) return ""; //Caso base para fim da recursão
+        return imprimirEmOrdemRec(raizAtual.getEsquerda()) + " " + 
+                raizAtual.getDado() + " " +
+                imprimirEmOrdemRec(raizAtual.getDireita());    
+    }
+
+    private String imprimirPosOrdemRec(NoTriplo<T> raizAtual) {
+        if (raizAtual == null) return ""; //Caso base para fim da recursão
+        return imprimirPosOrdemRec(raizAtual.getEsquerda()) + " " +
+                imprimirPosOrdemRec(raizAtual.getDireita()) +  " " +
+                raizAtual.getDado();           
     }
 
     private String imprimir(String texto){
